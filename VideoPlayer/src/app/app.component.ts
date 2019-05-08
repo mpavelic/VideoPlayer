@@ -9,17 +9,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'VideoPlayer';
   constructor(private videoService: YoutubeDataService){
-    this.ispisiPodatke();
+
   }
 
-  ispisiPodatke(){
-    this.videoService.getConfig().subscribe(result =>{
-      console.log(result);
-      
-    }
-    ,
-    error =>{
-      console.log('Error : ' + error)
-    })
-  }
 }

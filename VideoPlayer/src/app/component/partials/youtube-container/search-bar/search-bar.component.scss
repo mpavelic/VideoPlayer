@@ -1,0 +1,50 @@
+.container{
+    max-width: 1140px;
+    height: 70px;
+    background-color: transparent;
+}
+
+.icon-icon-search{
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    cursor: pointer;
+}
+
+.imageContainer{
+    max-width: 154px;
+}
+.logoImage{
+    width: 100%;
+}
+input[name="search"]{
+    width:100%;;
+    height: 50px;
+    background-color: #262639;
+    border: 1px solid #1A1928;
+    border-radius: 20px;
+    font-size: 16px;
+    text-indent: 10px;
+    color: white;
+    position: relative;
+}
+input[name="search"]:focus{
+    outline: none;
+}
+
+::placeholder {
+    color: #e3e3e4;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: #e3e3e4;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+   color: #e3e3e4;
+  }
+
+  .icon-icon-search{
+      color: white;
+  }

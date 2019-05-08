@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-10 video-container">
+      s
+    </div>
+    <div class="col-2 video-list-container">
+      <ul *ngIf="videoLoaded">
+        <div *ngFor="let videoItem of allVideoItems">
+          <li>
+            <img class="youtubeListItemImage"[src]="videoItem.mediumPicUrl">
+
+          </li>
+        </div>
+      </ul>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-12 video-information-container">
+
+    </div>
+  </div>
+</div>

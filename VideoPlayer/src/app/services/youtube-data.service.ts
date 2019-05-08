@@ -11,12 +11,14 @@ export class YoutubeDataService {
   { 
 
   }
-  private url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&order=rating&q=conor&key=AIzaSyCg7XtpTfXQ87Med9oWWKmv2ZACTVL-_vM';
-  private authTocen = 'AIzaSyCg7XtpTfXQ87Med9oWWKmv2ZACTVL-_vM';	
+  private url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&q=';
+  private authTocen = 'key=AIzaSyDval-rkh3gH0yr6RqxdQQ0GvOA2HX7dRw';	
  
  
-  getConfig() {
-    return this.http.get(this.url);
+  getYoutubeItemByName(q:string) {
+    console.log(this.url+q+"&"+this.authTocen+"&maxResults=5");
+    
+    return this.http.get(this.url+q+"&"+this.authTocen);
   }
 
 }

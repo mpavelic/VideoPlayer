@@ -1,0 +1,5 @@
+<div class="container ">
+  <app-search-bar #searchValue (searchClicked)="eventFromChild($event)"></app-search-bar>
+  <app-video-detail [events]="eventsSubject.asObservable()"></app-video-detail>
+  
+</div>
