@@ -1,25 +1,99 @@
 .video-container{
-    background-color: magenta;
+    background-color: #242435;
     height: 470px;
     max-width: 1140px;
 }
 .video-list-container{
+    background-color: #1E1E2E;
+    height: 470px;
+    overflow: hidden;
+    overflow-y:scroll;
 }
 
+
 .video-information-container{
-    background-color: yellow;
     height: 200px;
 }
 
-.youtubeListItemImage{
-    height: 100%;
-    width: 80%;
+.line{
+    height: 1px;
+    background-color: #29293B;
 }
-li{
+
+.vido{
+    height: 100%;
+}
+.instructionMessageContainer{
+    margin: auto;
+    margin-top: 25%;
+    max-width: 45%;
+}
+
+.instructionMessage{
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 18px;
+
+}
+.listMessage{
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+}
+
+.youtubeListItemImage{
+    background-color: #262638;
+    height: 100%;
+    width: 82px;
+    display: inline-block;
+
+}
+
+.videoTitle{
+    vertical-align: top;
+    margin-left: 10px;  
+    display: inline-block;
+  width: 140px;
+  height: 20px;
+  background-color: #262638;
+    
+}
+.videoDescription{
+    vertical-align: top;
+    margin-top: 30px;
+    display: inline-block;
+  width: 140px;
+  height: 20px;
+  background-color: #262638;
+ 
+}
+
+.listItem{
+    width: 241px;
+    height: 70px;
     margin-top: 10px;
-    height: 60px;
     display: block;
 }
+
+
 ul{
     padding: 0px;
+    margin-bottom: 0px;
 }
+
+/* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+   
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #242435;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    height: 10px;
+  }
+  

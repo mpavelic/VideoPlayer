@@ -11,18 +11,45 @@ export class VideoDetailComponent implements OnInit {
   private eventsSubscription: Subscription;
   videoLoaded: boolean = false;
   allVideoItems: Array<YoutubeItem> = [];
+  fakeVideoItems : Array<any> = [];
+  selectedVideoItemId : string = '';
+  player: YT.Player;
 
   @Input() events: Observable<Array<YoutubeItem>>
-  constructor() { }
+  constructor(
 
+  ) {
+    for (let index = 0; index < 5; index++) {
+      this.fakeVideoItems.push(index);
+      
+    }
+   }
+   savePlayer(player){
+     this.player = player;
+     
+   }
+
+   eventFromChild(data){
+     
+    this.player.loadVideoById(data)
+   }
   ngOnInit() {
     this.eventsSubscription = this.events.subscribe(result => {
+     
       this.allVideoItems = [];
-      this.allVideoItems = result; 
-      console.log(this.allVideoItems);
+      this.allVideoItems = result;
       this.videoLoaded = true;
+      this.selectedVideoItemId = this.allVideoItems[0].videoId
+      if(!this.player){
+        
+        return;
+      }
+      this.player.loadVideoById( this.selectedVideoItemId)
+      
+     
+      
       
     })
   }
-
+ 
 }

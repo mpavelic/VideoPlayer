@@ -1,0 +1,12 @@
+<ul>
+  <div *ngFor="let videoItem of arrayOfVideos">
+    <div class="col-12">
+      <li class="listItem" (click)="selectVideoItem(videoItem)">
+            <img class="youtubeListItemImage" [src]="videoItem.mediumPicUrl">
+            <div class="videoTitle">{{videoItem.title}}<br /><span class="videoDescription">{{videoItem.description}}</span></div>
+       
+      </li>
+    </div>
+
+  </div>
+</ul>

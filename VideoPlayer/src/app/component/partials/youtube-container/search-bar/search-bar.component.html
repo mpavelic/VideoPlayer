@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container pl-0 pr-0">
   <div class="row">
       <div class="col-4 ">
         <div class="imageContainer">
@@ -9,7 +9,7 @@
       </div>
       <div class="col-8">
         <div [formGroup]= 'searchForm' class="searchContainer">
-          <input class="searchInput" placeholder="Search" name="search" formControlName="search" autocomplete="off"/>
+          <input  class="searchInput" placeholder="Search" name="search" formControlName="search" autocomplete="off"/>
           <i (click)="SearchYoutubeService()"class="icon icon-icon-search"></i>
         
         </div>

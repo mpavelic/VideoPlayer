@@ -1,17 +1,41 @@
 <div class="container">
   <div class="row">
-    <div class="col-10 video-container">
-      s
-    </div>
-    <div class="col-2 video-list-container">
-      <ul *ngIf="videoLoaded">
-        <div *ngFor="let videoItem of allVideoItems">
-          <li>
-            <img class="youtubeListItemImage"[src]="videoItem.mediumPicUrl">
 
-          </li>
+    <div class="col-9 pl-0 pr-0 video-container">
+      <youtube-player (ready)="savePlayer($event)" *ngIf="videoLoaded" [videoId]="selectedVideoItemId" [width]="'100%'" [height]="'100%'">
+      </youtube-player>
+      <div *ngIf="!videoLoaded" class="instructionMessageContainer">
+        <span class="instructionMessage">Start searching for video to get result</span>
+      </div>
+    </div>
+
+    <div class="col-3  video-list-container">
+      <div class="col-12 mt-2">
+        <span class="listMessage">Related Videos</span>
+
+      </div>
+      <div class="col-12 mt-2">
+        <div class="line">
+
         </div>
-      </ul>
+      </div>
+      <div *ngIf="videoLoaded">
+        <app-video-list (selectVideoItem)="eventFromChild($event)" [arrayOfVideos]="allVideoItems"></app-video-list>
+      </div>
+      <div *ngIf="!videoLoaded">
+        <ul>
+          <div *ngFor="let item of fakeVideoItems">
+            <div class="col-12">
+              <li class="listItem">
+                <div class="youtubeListItemImage"></div>
+                <div class="videoTitle"><div class="videoDescription"></div></div>
+
+              </li>
+            </div>
+
+          </div>
+        </ul>
+      </div>
     </div>
 
   </div>

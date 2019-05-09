@@ -12,7 +12,7 @@ import { Subject } from 'rxjs';
 export class YoutubeContainerComponent implements OnInit {
 
   constructor(private videoService: YoutubeDataService) { }
-  @ViewChild('searchValue') searchValue: SearchBarComponent;
+  // @ViewChild('searchValue') searchValue: SearchBarComponent;
   dataFromChild;
   allVideoItems: Array<YoutubeItem> = [];
   eventsSubject: Subject<Array<YoutubeItem>> = new Subject<Array<YoutubeItem>>();
@@ -22,10 +22,9 @@ export class YoutubeContainerComponent implements OnInit {
   }
   eventFromChild(data) {
     this.dataFromChild = data;
-    console.log(data);
+
 
     this.videoService.getYoutubeItemByName(data).subscribe(result => {
-      
       this.allVideoItems = [];
       result['items'].map(item => {
         let tempItem = new YoutubeItem();
@@ -33,11 +32,14 @@ export class YoutubeContainerComponent implements OnInit {
         tempItem.chanelId = item.snippet.channelId;
         tempItem.chanelTitle = item.snippet.channelTitle;
         tempItem.title = item.snippet.title;
+        tempItem.description = item.snippet.description
         tempItem.defaultPicUrl = item.snippet.thumbnails.default.url;
         tempItem.highPicUrl = item.snippet.thumbnails.high.url;
         tempItem.mediumPicUrl = item.snippet.thumbnails.medium.url;
         this.allVideoItems.push(tempItem)
       })
+     
+      
       this.emitEventToChild(this.allVideoItems);
 
     },
@@ -49,31 +51,6 @@ export class YoutubeContainerComponent implements OnInit {
   ngOnInit() {
 
   }
-
-
-
-
 }
 
-// //   this.videoService.getYoutubeItem().subscribe(result =>{
-// //     console.log(result);
 
-// //     result['items'].map(item => {
-// //       let tempItem = new YoutubeItem();
-// //       tempItem.videoId = item.id.videoId;
-// //       tempItem.chanelId = item.snippet.channelId;
-// //       tempItem.chanelTitle = item.snippet.channelTitle;
-// //       tempItem.title = item.snippet.title;
-// //       tempItem.defaultPicUrl = item.snippet.thumbnails.default.url;
-// //       tempItem.highPicUrl = item.snippet.thumbnails.high.url;
-// //       tempItem.mediumPicUrl = item.snippet.thumbnails.medium.url;
-// //       this.allVideoItems.push(tempItem)
-// //     })
-// //     console.log(this.allVideoItems);
-
-// //   },
-// //   error =>{
-// //     console.log('Error : 400');
-
-// //   })
-// // }

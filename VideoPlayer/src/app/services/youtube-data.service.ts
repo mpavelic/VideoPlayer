@@ -16,7 +16,6 @@ export class YoutubeDataService {
  
  
   getYoutubeItemByName(q:string) {
-    console.log(this.url+q+"&"+this.authTocen+"&maxResults=5");
     
     return this.http.get(this.url+q+"&"+this.authTocen);
   }

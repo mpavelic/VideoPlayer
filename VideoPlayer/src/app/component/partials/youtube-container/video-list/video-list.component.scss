@@ -1,0 +1,33 @@
+.youtubeListItemImage{
+    height: 100%;
+    width: 82px;
+}
+
+.videoTitle{
+    display: inline-block;
+    width: 140px;
+    height: 60px;
+    color: white;
+    font-size: 12px;
+    vertical-align: top;
+     word-wrap: break-word;
+     margin-left: 7px;
+    
+}
+.videoDescription{
+    color: #707070;
+}
+
+.listItem{
+    width: 241px;
+    height: 70px;
+    margin-top: 10px;
+    display: block;
+    overflow: hidden;
+}
+
+
+ul{
+    padding: 0px;
+    margin-bottom: 0px;
+}

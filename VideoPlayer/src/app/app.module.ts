@@ -9,6 +9,8 @@ import { YoutubeContainerComponent } from './component/partials/youtube-containe
 import { SearchBarComponent } from './component/partials/youtube-container/search-bar/search-bar.component';
 import { VideoDetailComponent } from './component/partials/youtube-container/video-detail/video-detail.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
+import { VideoListComponent } from './component/partials/youtube-container/video-list/video-list.component';
 
 
 @NgModule({
@@ -20,14 +22,18 @@ import { ReactiveFormsModule } from '@angular/forms';
 
     SearchBarComponent,
 
-    VideoDetailComponent
+    VideoDetailComponent,
+
+    VideoListComponent
   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxYoutubePlayerModule.forRoot()
+
   ],
   providers: [],
   bootstrap: [AppComponent]
