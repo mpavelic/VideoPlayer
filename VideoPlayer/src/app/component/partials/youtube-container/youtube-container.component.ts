@@ -13,7 +13,6 @@ export class YoutubeContainerComponent implements OnInit {
 
   constructor(private videoService: YoutubeDataService) { }
   // @ViewChild('searchValue') searchValue: SearchBarComponent;
-  dataFromChild;
   allVideoItems: Array<YoutubeItem> = [];
   eventsSubject: Subject<Array<YoutubeItem>> = new Subject<Array<YoutubeItem>>();
 
@@ -21,7 +20,6 @@ export class YoutubeContainerComponent implements OnInit {
     this.eventsSubject.next(youtubeItem)
   }
   eventFromChild(data) {
-    this.dataFromChild = data;
 
 
     this.videoService.getYoutubeItemByName(data).subscribe(result => {

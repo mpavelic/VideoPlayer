@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { YoutubeItem } from 'src/app/models/youtube-item';
-import { Observable, Subscription } from 'rxjs';
+import { Observable, Subscription, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-video-detail',
@@ -9,6 +9,7 @@ import { Observable, Subscription } from 'rxjs';
 })
 export class VideoDetailComponent implements OnInit {
   private eventsSubscription: Subscription;
+
   videoLoaded: boolean = false;
   allVideoItems: Array<YoutubeItem> = [];
   fakeVideoItems : Array<any> = [];

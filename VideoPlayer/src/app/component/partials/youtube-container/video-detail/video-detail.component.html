@@ -20,7 +20,7 @@
         </div>
       </div>
       <div *ngIf="videoLoaded">
-        <app-video-list (selectVideoItem)="eventFromChild($event)" [arrayOfVideos]="allVideoItems"></app-video-list>
+        <app-video-list (itemSelected)="eventFromChild($event)" [arrayOfVideos]="allVideoItems"></app-video-list>
       </div>
       <div *ngIf="!videoLoaded">
         <ul>
