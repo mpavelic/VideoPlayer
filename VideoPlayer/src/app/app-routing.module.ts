@@ -4,7 +4,7 @@ import { HomeComponent } from './component/views/home/home.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'player',
     component: HomeComponent
   }
 ];
