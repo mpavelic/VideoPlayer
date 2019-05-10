@@ -10,9 +10,13 @@
     overflow-y:scroll;
 }
 
+.backToSearchList{
+        
+}
 
 .video-information-container{
     height: 200px;
+    cursor: pointer;
 }
 
 .line{
@@ -58,6 +62,20 @@
     color: white;
     font-size: 24px;
 
+}
+
+.VideoItemChanelTitle{
+    position: absolute;
+    top:12px;
+    left: 55px;
+
+}
+
+.chanelImage{
+    border-radius: 50%;
+    width: 46px;
+    height: 46px;
+    position: relative;
 }
 
 .videoFooterDescription{

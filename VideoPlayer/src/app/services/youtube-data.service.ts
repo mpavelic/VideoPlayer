@@ -12,11 +12,10 @@ export class YoutubeDataService {
 
   }
   private url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&q=';
-  private iconUrl = 'https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=';
+  private iconUrl = 'https://www.googleapis.com/youtube/v3/channels?part=snippet&id=';
 
   private authTocen = 'key=AIzaSyA7_6UdG-_9ZNJfr2_ZmMFV9qdqs1dizCQ';	
- 
- 
+
   getYoutubeItemByName(q:string) {
     
     return this.http.get(this.url+q+"&"+this.authTocen);

@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-
+    
     <div class="col-9 pl-0 pr-0 video-container">
       <youtube-player (ready)="savePlayer($event)" *ngIf="videoLoaded" [videoId]="selectedVideoItemId" [width]="'100%'"
         [height]="'100%'">
@@ -43,11 +43,15 @@
 
   </div>
   <div class="row" *ngIf="videoLoaded">
-    <div class="col-12 video-information-container">
+    <div class="col-12 video-information-container" (click)="RedirecToRoute(selectedChanelId)">
       <div class="row mt-4 chanelTitle">
-        <div class="col-2">
-          <img [src]="chanelPhotoUrl">
-        </div> {{selectedVideoItemChanelTitle}}
+        <div class="col-12 pl-0">
+          <img [src]="chanelPhotoUrl" class="chanelImage">
+          <div class="VideoItemChanelTitle">
+            {{selectedVideoItemChanelTitle}}
+          </div>
+        </div> 
+       
       </div>
       <div class="row mt-2 videoName">
         {{selectedVideoName}}

@@ -37,12 +37,17 @@ export class VideoDetailComponent implements OnInit {
      
    }
 
+   RedirecToRoute(){
+     
+   }
+
    eventFromChild(data){
      
     this.player.loadVideoById(data.videoId)
     this.selectedVideoItemChanelTitle = data.chanelTitle;
     this.selectedVideoName = data.title;
-    this.selectedVideoDescription = data.description
+    this.selectedVideoDescription = data.description;
+    this.selectedChanelId = data.chanelId;
     this.youtubeService.getChanelIconByIconId(this.selectedChanelId).subscribe(result =>{
       console.log(result);
       
