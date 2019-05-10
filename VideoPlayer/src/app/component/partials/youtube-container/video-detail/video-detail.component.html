@@ -2,7 +2,8 @@
   <div class="row">
 
     <div class="col-9 pl-0 pr-0 video-container">
-      <youtube-player (ready)="savePlayer($event)" *ngIf="videoLoaded" [videoId]="selectedVideoItemId" [width]="'100%'" [height]="'100%'">
+      <youtube-player (ready)="savePlayer($event)" *ngIf="videoLoaded" [videoId]="selectedVideoItemId" [width]="'100%'"
+        [height]="'100%'">
       </youtube-player>
       <div *ngIf="!videoLoaded" class="instructionMessageContainer">
         <span class="instructionMessage">Start searching for video to get result</span>
@@ -28,7 +29,9 @@
             <div class="col-12">
               <li class="listItem">
                 <div class="youtubeListItemImage"></div>
-                <div class="videoTitle"><div class="videoDescription"></div></div>
+                <div class="videoTitle">
+                  <div class="videoDescription"></div>
+                </div>
 
               </li>
             </div>
@@ -39,9 +42,19 @@
     </div>
 
   </div>
-  <div class="row">
+  <div class="row" *ngIf="videoLoaded">
     <div class="col-12 video-information-container">
-
+      <div class="row mt-4 chanelTitle">
+        <div class="col-2">
+          <img [src]="chanelPhotoUrl">
+        </div> {{selectedVideoItemChanelTitle}}
+      </div>
+      <div class="row mt-2 videoName">
+        {{selectedVideoName}}
+      </div>
+      <div class="row mt-2 videoFooterDescription">
+        {{selectedVideoDescription}}
+      </div>
     </div>
   </div>
 </div>

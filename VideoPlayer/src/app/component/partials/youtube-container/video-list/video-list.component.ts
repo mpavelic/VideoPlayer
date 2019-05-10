@@ -18,6 +18,6 @@ export class VideoListComponent implements OnInit {
   selectVideoItem(videoItem: YoutubeItem){
     console.log('da');
     
-    this.itemSelected.emit(videoItem.videoId)
+    this.itemSelected.emit(videoItem)
   }
 }

@@ -12,7 +12,9 @@ export class YoutubeDataService {
 
   }
   private url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&q=';
-  private authTocen = 'key=AIzaSyDval-rkh3gH0yr6RqxdQQ0GvOA2HX7dRw';	
+  private iconUrl = 'https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=';
+
+  private authTocen = 'key=AIzaSyA7_6UdG-_9ZNJfr2_ZmMFV9qdqs1dizCQ';	
  
  
   getYoutubeItemByName(q:string) {
@@ -20,4 +22,7 @@ export class YoutubeDataService {
     return this.http.get(this.url+q+"&"+this.authTocen);
   }
 
+  getChanelIconByIconId(iconId : string){
+    return this.http.get(this.iconUrl+iconId+"&"+this.authTocen);
+  }
 }
